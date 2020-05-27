@@ -351,7 +351,7 @@ public class RecordFragment extends Fragment {
         );
         if (!folder.exists()) {
             // a folder for sound recordings doesn't exist -> create the folder
-            boolean ok = Paths.isExternalStorageWritable() && folder.mkdir();
+            boolean ok = Paths.isExternalStorageWritable() && folder.mkdirs();
             if (!ok) {
                 EventBroadcaster.send(getContext(), R.string.error_mkdir);
                 return false;
